@@ -1,0 +1,26 @@
+import pymysql.cursors
+# Подключиться к базе данных.
+connection = pymysql.connect(host='192.168.5.134',
+                             user='root',
+                             password='1234',
+                             db='simplehr',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+print ("connect successful!!")
+
+
+
+try:
+    with mydb.cursor() as cursor:
+        sql = 'INSERT INTO Sensors (Count) VALUES (123)'
+        val = ("Датчик3",21)
+        cursor.execute(sql)
+        mydb.commit()
+        sql = "SELECT id, Count FROM Sensors"
+        cursor.execute(sql)
+        for row in cursor:
+            print(row)
+finally:
+    # Закрыть соединение (Close connection).
+    mydb.close()
+
