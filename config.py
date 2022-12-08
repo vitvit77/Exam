@@ -1,0 +1,1 @@
+CONFIG = {"HOST": "85.10.210.81", "USER":"tmpfs", "PASS":"5tgb2wsx77","DB":"FullStack"}
